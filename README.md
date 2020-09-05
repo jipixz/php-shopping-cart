@@ -5,5 +5,4 @@ Technologies:
 - Bulma for CSS
 - PHP for backend
 - HTML frontend
-- SQL 
-- JQuery 
+- SQL

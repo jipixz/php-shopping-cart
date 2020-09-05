@@ -38,6 +38,8 @@ if (isset($_POST['product_id'], $_POST['quantity']) && is_numeric($_POST['produc
         }
     }
 
+    
+
     //Prevenir el reenvío
     header('location: index.php?page=cart');
     exit;
@@ -143,9 +145,9 @@ if($products_in_cart){
                 <table class="table table is-fullwidth">
                     <thead>
                         <tr>
-                            <td colspan="2">Product</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
+                            <td colspan="2">Producto</td>
+                            <td>Precio</td>
+                            <td>Cantidad</td>
                             <td class="has-text-right">Total</td>
                         </tr>
                     </thead>

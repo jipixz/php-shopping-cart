@@ -1,6 +1,7 @@
 <?php
 //Este archivo será para mostrar todos los productos
 
+
 //Cantidad de productos por página
 $num_products_on_each_page = 8;
 
@@ -9,6 +10,7 @@ $current_page = isset($_GET['p']) && is_numeric($_GET['p']) ? (int)$_GET['p'] : 
 //Seleccionar productos por fecha
 $stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT ?,?');
 
+//bindValue nos permitirá usar integer en la declaración SQL, necesitamos usar para LIMIT
 $stmt->bindValue(1, ($current_page -1) * $num_products_on_each_page, PDO::PARAM_INT);
 $stmt->bindValue(2, $num_products_on_each_page, PDO::PARAM_INT);
 $stmt->execute();

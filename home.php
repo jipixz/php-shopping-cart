@@ -1,6 +1,16 @@
 <?php 
 //Este archivo será la página principal, contiene una
 //imagen y 4 productos agregados recientemente
+//session_start();
+
+/*if (!isset($_SESSION['user']) || !isset($_SESSION['admin'])){
+    
+    header("Location: /coulbefinal-copia/login.php");
+    
+}*/
+
+
+
 
 //Recuperar los últimos 4 productos añadidos
 $stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 4');

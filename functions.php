@@ -5,10 +5,10 @@
 function pdo_connect_mysql(){
 
     //Datos de la base de datos local
-    $DATABASE_HOST = 'localhost';
+    $DATABASE_HOST = 'localhost';   
     $DATABASE_USER = 'root';
-    $DATABASE_PASS = 'jipixz';
-    $DATABASE_NAME = 'practicaphp';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = '';
 
     try{
         return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
@@ -17,6 +17,24 @@ function pdo_connect_mysql(){
         die ('Error al conectar con la base de datos');
     }
 }
+
+
+function pdo_connect_mysql_user(){
+
+    //Datos de la base de datos local
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = 'jipixz';
+    $DATABASE_NAME = 'practicausuarios';
+
+    try{
+        return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
+    }catch (PDOException $exception) {
+        //Si existe algún error con la conección el script se detiene y muestra el error
+        die ('Error al conectar con la base de datos');
+    }
+}
+
 
 //Plantilla de la cabecera
 function template_header($title){
@@ -49,8 +67,8 @@ echo <<<EOT
                     <div class="navbar-end">
                         <div class="navbar-item">
                             <div class="buttons">
-                                <a class="button is-info">
-                                    <strong>Admin</strong>
+                                <a class="button is-info" href="manager.php"> 
+                                    <strong>Manager</strong>
                                 </a>
                             </div>
                         </div>

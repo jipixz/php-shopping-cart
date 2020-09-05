@@ -13,4 +13,5 @@ $page = isset($_GET['page']) && file_exists($_GET['page'] . '.php') ? $_GET['pag
 
 //Incluir y mostrar la página requerida
 include $page . '.php';
+//var_dump($page);
 ?>

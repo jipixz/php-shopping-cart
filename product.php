@@ -47,10 +47,14 @@ if (isset($_GET['id'])){
                 <form action="index.php?page=cart" method="post">
                     <input class="input mt-4" type="number" name="quantity" value="1" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
                     <input type="hidden" name="product_id" value="<?=$product['id']?>">
+                    <?php if ($product['quantity'] == 0): ?>
+                    <button class="button mt-4 is-fullwidth is-info is-outlined" type="submit" disabled>Agregar al carrito</button>
+                    <?php else: ?>
                     <button class="button mt-4 is-fullwidth is-info is-outlined" type="submit">Agregar al carrito</button>
+                    <?php endif; ?>
                 </form>
                 <div class="description">
-                    <?=$product['desc']?>
+                    <?=$product['descr']?>
                 </div>
             </div>
     </div>
